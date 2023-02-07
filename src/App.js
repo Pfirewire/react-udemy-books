@@ -38,7 +38,8 @@ function App() {
         }));
     };
 
-    const deleteBookById = (id) => {
+    const deleteBookById = async (id) => {
+        let response = await axios.delete(`http://localhost:3001/books/${id}`);
         setBooks(books.filter(book => book.id !== id));
     };
 
@@ -47,7 +48,7 @@ function App() {
     };
 
     return(
-        <div>
+        <div className="app">
             <h1>Reading List</h1>
             <BookList books={books} onDelete={deleteBookById} onEdit={editBookById} />
             <BookCreate onCreate={createBook} />
