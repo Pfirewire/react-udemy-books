@@ -1,5 +1,6 @@
 import { useState } from "react";
 import BookCreate from "./components/BookCreate";
+import BookList from "./components/BookList";
 
 function App() {
     const [books, setBooks] = useState([]);
@@ -16,20 +17,21 @@ function App() {
         setBooks(updatedBooks);
     };
 
+    const editBookById = (id, title) => {
+
+    };
+
+    const deleteBookById = (id) => {
+        setBooks(books.filter(book => book.id !== id));
+    };
+
     const randomId = () => {
         return Math.round(Math.random() * 99999);
     };
 
-    const editBook = () => {
-
-    };
-
-    const deleteBook = () => {
-
-    };
-
     return(
         <div>
+            <BookList books={books} onDelete={deleteBookById} />
             <BookCreate onCreate={createBook} />
         </div>
     );
