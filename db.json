@@ -1,3 +1,28 @@
 {
-  "books": []
+  "books": [
+    {
+      "id": 1,
+      "title": "Harry Potter"
+    },
+    {
+      "title": "Lord of the Rings, Fellowship of the Ring",
+      "id": 2
+    },
+    {
+      "title": "Lord of the Rings, The Two Towers",
+      "id": 3
+    },
+    {
+      "title": "Lord of the Rings, The Return of the King",
+      "id": 4
+    },
+    {
+      "title": "test",
+      "id": 5
+    },
+    {
+      "title": "test",
+      "id": 6
+    }
+  ]
 }

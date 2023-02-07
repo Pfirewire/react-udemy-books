@@ -1,0 +1,27 @@
+// Get All Books
+GET http://localhost:3001/books
+
+###
+// Add A Book
+POST http://localhost:3001/books HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Lord of the Rings, Fellowship of the Ring"
+}
+
+###
+// Edit A Book
+PUT http://localhost:3001/books/4 HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Lord of the Rings, The Return of the King"
+}
+
+###
+// Delete A Book
+DELETE http://localhost:3001/books/5 HTTP/1.1
+Content-Type: application/json
+
+
