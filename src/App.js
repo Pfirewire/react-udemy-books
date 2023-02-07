@@ -32,7 +32,7 @@ function App() {
         });
         setBooks(books.map((book) => {
             if(book.id === id) {
-                return {...book, title: response.data.title};
+                return {...book, ...response.data};
             }
             return book;
         }));
