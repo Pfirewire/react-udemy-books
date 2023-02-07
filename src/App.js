@@ -19,9 +19,6 @@ function App() {
         let response = await axios.post('http://localhost:3001/books', {
             title
         });
-        console.log(response);
-
-        // console.log(`Need to add book with title of ${title}`);
         const updatedBooks = [
             ...books,
             response.data
@@ -29,10 +26,13 @@ function App() {
         setBooks(updatedBooks);
     };
 
-    const editBookById = (id, title) => {
+    const editBookById = async (id, title) => {
+        let response = await axios.put(`http://localhost:3001/books/${id}`, {
+            title
+        });
         setBooks(books.map((book) => {
             if(book.id === id) {
-                return {...book, title};
+                return {...book, title: response.data.title};
             }
             return book;
         }));
