@@ -33,13 +33,14 @@ function Provider({ children }) {
                 return book;
             }));
         },
-        randomId: () => {
-            return Math.round(Math.random() * 99999);
+        deleteBookById: async (id) => {
+            let response = await axios.delete(`http://localhost:3001/books/${id}`);
+            setBooks(books.filter(book => book.id !== id));
         },
     };
 
     return (
-        <BooksContext.Provider value={{}}>
+        <BooksContext.Provider value={valueToShare}>
             {children}
         </BooksContext.Provider>
     );
